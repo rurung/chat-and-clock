@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>beom 과제</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./style.css">
     <style>
         .view {
             width: 300px;
@@ -41,6 +41,17 @@
         </div>
     </div>
     <script>
+      const chatData = [
+        {img : 'sample1', name : 'beom', contents : '안녕하세요', time : '14:00'},
+        {img : 'sample2', name : 'sky', contents : '네 안녕하세요', time : '14:00'},
+        {img : 'sample1', name : 'beom', contents : '숙제는', time : '14:03'},
+        {img : 'sample1', name : 'beom', contents : '다해 오셨나요?', time : '14:10'},
+        {img : 'sample2', name : 'sky', contents : '네!', time : '14:10'},
+        {img : 'sample2', name : 'sky', contents : '다했습니다', time : '14:10'},
+        {img : 'sample2', name : 'sky', contents : '더 할거 없나요?', time : '14:11'},
+        {img : 'sample1', name : 'beom', contents : '아니요 충분합니다', time : '14:14'},
+        ]
+
       const clock = () => {
         var timeText = document.getElementById('clock');
         const today = new Date();
@@ -48,6 +59,7 @@
         const M = today.getMinutes();
         return timeText = H + ":" + M;
       }
+      
       const submitBtn = () => {
         var template = `<div class="line">
         <span class="chat-box mine">${ document.querySelector('#input').value }</span>
