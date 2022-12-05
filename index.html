@@ -19,7 +19,7 @@
         .line { margin-top: 10px; display: flex; flex-direction: row;}
         .chat-box {background-color: #fff; padding: 5px; max-width: 200px; border-radius: 5px;}
         .mine {margin-left: auto;}
-        .clock-box {font-size: 12px;}
+        span.clock-box {font-size: 12px; padding-top: 15px;}
         .control {
             padding: 20px;
         }
@@ -47,12 +47,12 @@
                 const H = today.getHours();
                 const M = today.getMinutes();
 
-                timeText.innerHTML = H + ":" + M;
+                return timeText = H + ":" + M;
             }
             const submitBtn = () => {
               var template = `<div class="line">
               <span class="chat-box mine">${ document.querySelector('#input').value }</span>
-              <span id="clock" class="clock-box">00:00</span>
+              <span id="clock" class="clock-box">${ clock() }</span>
               </div>
               `
               document.querySelector('.view').insertAdjacentHTML('beforeend', template);
