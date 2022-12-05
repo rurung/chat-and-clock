@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y과제</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .clock {
+            text-align: center;
+            height: 200px;
+        }
+        .time-clock {width: 200px; outline: 2px solid black;}
+        .set { font-size: 30px; color: #4c4c4c; text-align: center; padding: 20px 0;}
+        .TextRecordList { padding: 20px 0 ;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock" id="timer">
+            <div class="set" id="set">
+                <span id="Min">00</span> : <span id="Sec">00</span> : <span id="Milisec">00</span>
+            </div>
+            <div class="btn-all">
+                <button type="button" class="startBtn" id="testStart">시작</button>
+                <button type="button" class="pauseBtn" id="testPause">일시정지</button>
+                <button type="button" class="stopBtn" id="testStop">정지</button>
+                <button type="button" class="resetBtn" id="testReset">초기화</button>
+            </div>
+            <div class="TextRecordList" id="TextRecordList">
+                <span id="none"> 현재 데이터가 없습니다.</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        const setTime = 0;
+        const endTime = 0;
+        const tartFlag = true;
+
+        const testStart = document.getElementById('testStart');
+        const stopStart = document.getElementById('button');
+
+        testStart.addEventListener('click')
+
+        const clock = () => {
+            document.getElementById('testStart').addEventListener('click', function() {
+                if(!time) {
+                    time = new Data().getTime();
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>
