@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        section {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        input::placeholder {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <p id="test">버튼을 클릭하면 바뀌게 해야하나? <span class="text">뫄뫄</span>입니까?</p>
+        
+            <button id="jsBtn" type="button" onclick="changeByJS()">버튼1번</button>
+            <button id="jsBtn" type="button" onclick="changeByMua()">버튼2번</button>
+        </section>
+        <section>
+            <p> 과제가 input 입력 후 값이 바뀌는건가? </p>
+            <input id='name' placeholder="값을 입력하세요." onchange='printName()'/>
+            <p>값 : <span id="result"></span></p>
+        </section>
+        <section>
+            <p>자꾸 제이쿼리만 나오는데 그거 말고 순수 자바스크립트로만 되려나?</p>
+            <input id="input" type="text" oninput="myFunction()" placeholder="실시간 값 입력">
+            <p>값 : <span oninput="myFunction()" id="testText"></span></p>
+        </section>
+    </div>
+
+    <script>
+        const changeByJS = () => {
+            let change = document.getElementsByClassName("text")[0];
+            change.innerText="Javascript"; 
+            change.style.color="red";
+        }       
+        const changeByMua = () => {
+            let change = document.getElementById("test");
+            change.style.fontSize="20px";
+        }
+
+        const printName = () => {
+            const name = document.getElementById('name').value;
+            document.getElementById("result").innerText = name;
+        }
+
+        const myFunction = () => {
+            let value = document.getElementById('input').value;
+            document.getElementById("testText").innerText = value;
+        }
+    </script>
+</body>
+</html>

@@ -29,7 +29,7 @@
     <div class="container">
         <div class="view">
             <div class="line">
-              <span class="chat-box">"안녕"</span>
+              <span class="chat-box">"샘플이 안녕"</span>
             </div>
             <div class="line">
               <span class="chat-box mine">"안녕"</span>
@@ -42,22 +42,21 @@
     </div>
     <script>
       const clock = () => {
-                var timeText = document.getElementById('clock');
-                const today = new Date();
-                const H = today.getHours();
-                const M = today.getMinutes();
-
-                return timeText = H + ":" + M;
-            }
-            const submitBtn = () => {
-              var template = `<div class="line">
-              <span class="chat-box mine">${ document.querySelector('#input').value }</span>
-              <span id="clock" class="clock-box">${ clock() }</span>
-              </div>
-              `
-              document.querySelector('.view').insertAdjacentHTML('beforeend', template);
-              document.getElementById("input").value='';// 클릭 후 초기화
-            }
+        var timeText = document.getElementById('clock');
+        const today = new Date();
+        const H = today.getHours();
+        const M = today.getMinutes();
+        return timeText = H + ":" + M;
+      }
+      const submitBtn = () => {
+        var template = `<div class="line">
+        <span class="chat-box mine">${ document.querySelector('#input').value }</span>
+        <span id="clock" class="clock-box">${ clock() }</span>
+        </div>
+        `
+        document.querySelector('.view').insertAdjacentHTML('beforeend', template);
+        document.getElementById("input").value='';// 버튼 이벤트 후 초기화
+      }
     </script>
 </body>
 </html>

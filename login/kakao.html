@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/common.css"/>
+    <script src="https://kit.fontawesome.com/a1e1a86354.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="">
+
+        </div>
+        <div class="header">
+            <img src="./images/KakaoTalk_logo.svg.png" alt="로고이미지">
+        </div>
+        <div class="form">
+            <input type="text" id="userId" placeholder="카카오계정 (이메일 또는 전화번호)"/>
+            <input type="password" id="userPw" placeholder="비밀번호" minlength="8" required/>
+            <button id="submit">로그인</button>
+        </div>
+        <fieldset>
+            <legend>또는</legend>
+        </fieldset>
+        <button id="submit" class="qr"><i class="fa-solid fa-qrcode"></i>QR코드 로그인</button>
+        <div class="auto">
+            <input type="radio" value="HTML" /><label for="html">자동로그인</label>
+        </div>
+        <div class="footer">
+            <a href="#">카카오계정 찾기</a>|<a href="#">비밀번호 재설정</a>
+        </div>
+    </div>
+    <script>
+        const userId = 'seung';
+        const userPw = '1234';
+        const submit = false;
+
+        const userIdDom = document.getElementById('userId');
+        const userPwDom = document.getElementById('userPw');
+        const submitDom = document.getElementById('submit');
+        submitDom.disabled = true;
+
+        submitDom.addEventListener('click', (e) => {
+            let msg = ''
+            if(userIdDom.value === userId) {
+                userIdDom.style.color = '#333'
+            } else {
+                userIdDom.style.color = 'red';
+                msg = 'ID false'
+            }
+
+            if(userPwDom.value === userPw) {
+                userPwDom.style.color = '#333';
+            } else {
+                userPwDom.style.color = 'red';
+                msg = 'Password false'
+            }
+            if(!msg) {
+                alert('로그인 성공');
+            } else {
+                alert('로그인 실패')
+            }
+        })
+    </script>
+</body>
+</html>
